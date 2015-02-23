@@ -1,6 +1,7 @@
 require "garnet/version"
 require "garnet/controller"
 require "garnet/utils"
+require "garnet/dependencies"
 
 module Garnet
   class Application
