@@ -11,8 +11,14 @@ module Garnet
       end
 
       controller_class, action = get_controller_and_action(env)
-      response = controller_class.new(env).send(action)
-      ['200', {'Content-Type' => 'text/html'}, [response]]
+      controller = controller_class.new(env)
+      response = controller.send(action)
+
+      if controller.get_response
+        controller.get_response
+      else
+        ['200', {'Content-Type' => 'text/html'}, [response]]
+      end
     end
 
     def get_controller_and_action(env)

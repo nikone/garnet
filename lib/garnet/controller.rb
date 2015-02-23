@@ -12,7 +12,19 @@ module Garnet
       request.params
     end
 
-    def render(view_name, locals = {})
+    def get_response
+      @response
+    end
+
+    def response(body, status = 200, header = {})
+      @response = Rack::Response.new(body, status, header)
+    end
+
+    def render(*args)
+      response(render_template(*args))
+    end
+
+    def render_template(view_name, locals = {})
       filename = File.join("app", "views", controller_name, "#{view_name}.erb")
       template = File.read(filename)
       Erubis::Eruby.new(template).result(locals)
