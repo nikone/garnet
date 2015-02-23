@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Garnet::VERSION
   spec.authors       = ["Nenad Nikolic"]
   spec.email         = ["nnikolic87@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Simple MVC and minimalistic framework}
+  spec.description   = %q{Simple MVC and minimalistic framework}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+
+  spec.add_runtime_dependency "rack"
 end
