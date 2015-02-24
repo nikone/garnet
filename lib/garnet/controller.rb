@@ -16,7 +16,7 @@ module Garnet
       @response
     end
 
-    def response(body, status = 200, header = {})
+    def response(body, status = 200, header = {'Content-Type' => 'text/html'})
       @response = Rack::Response.new(body, status, header)
     end
 

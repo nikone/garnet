@@ -9,7 +9,6 @@ module Garnet
       target = nil
       target = args.shift if args.size > 0
 
-      # splits path by / and remove the empty ones
       url_parts = url.split("/")
       url_parts.select! { |part| !part.empty? }
 
@@ -32,11 +31,9 @@ module Garnet
     end
 
     def check_url(url)
-      puts @routes
       @routes.each do |route|
         match = route[:regexp].match(url)
         if match
-          # { controller: "haha", action: "hehe" }
           placeholders = {}
           route[:placeholders].each_with_index do |placeholder, index|
             placeholders[placeholder] = match.captures[index]
@@ -69,7 +66,6 @@ module Garnet
     end
 
     def get_rack_app(env)
-      # nije mi jasno kako tu vraca 
       @router.check_url(env["PATH_INFO"])
     end
   end
