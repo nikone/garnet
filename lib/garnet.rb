@@ -3,7 +3,7 @@ require "garnet/controller"
 require "garnet/utils"
 require "garnet/dependencies"
 require "garnet/router"
-require "garnet/mapper"
+require "garnet/model"
 
 module Garnet
   class Application

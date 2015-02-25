@@ -1,15 +1,14 @@
 require 'sqlite3'
 
 module Garnet
-  class Mapper
+  class Model
     @@db = SQLite3::Database.new File.join "db", "app.db"
     @@table_name = ""
     @@model = nil
     @@mappings = {}
 
-    def save(model)
-      @model = model
-      if model.id
+    def save
+      if self.id
         @@db.execute("UPDATE #{@@table_name} SET #{update_record_placeholders} WHERE id = ?", update_record_values)
       else
         @@db.execute "INSERT INTO #{@@table_name} (#{get_columns}) VALUES (#{new_record_placeholders})", new_record_values
