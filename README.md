@@ -1,29 +1,8 @@
-# Garnet
+Garnet
+=====
 
-TODO: Write a gem description
+Small MVC framework with rails inspired conventions built on top of rack. 
+Reinventing the wheel out of curiosity.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'garnet'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install garnet
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/garnet/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Project build with garnet can be found here
+https://github.com/nikone/blog
